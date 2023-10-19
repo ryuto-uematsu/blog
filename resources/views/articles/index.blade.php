@@ -5,21 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="/main.css">
 </head>
 <body>
     <header>
-        <div class="site-title">ミニブログ</div>
+        <div class="site-title"><span>ミニブログ</span></div>
     </header>
     <main class="container">
+        {{--変数は変える↓--}}
         @foreach ($articles as $article)
         <article class="article-item">
+            {{--モデルからタイトルを取得--}}
             <div class="article-title">{{ $article->title }}</div>
+            {{--モデルから本文を取得--}}
             <div class="article-body">{{ $article->body }}</div>
         </article>
         @endforeach
     </main>
     <footer>
-        &copy; Laravel8 入門〜開発実践まで
+        ミニブログ
     </footer>
 </body>
 </html>

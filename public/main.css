@@ -1,0 +1,32 @@
+body {
+    margin: 0;  
+}
+header {
+    width: 100%;
+	line-height: 60px;
+	background: #3c3c3c;
+}
+.site-title {
+    padding: 0 20px;
+	font-size: 18px;
+	color: #fff;
+	letter-spacing: .2em;
+}
+.container {
+    padding: 0 20px;
+}
+.article-item {
+    padding: 20px 0;
+    border-bottom: 1px solid #ddd;
+}
+.article-title {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+footer {
+    padding: 20px;
+    text-align: center;
+    font-size: .9rem;
+    color: #777;
+}
