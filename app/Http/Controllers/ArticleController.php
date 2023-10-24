@@ -31,7 +31,12 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        //
+        //Articleインスタンスを作成し、$articleに代入
+        $article = new Article();
+        //連想配列で$dataに$articleを代入
+        $data = ['article' => $article];
+        //$dataのviweを返す
+        return view('articles.create', $data);
     }
 
     /**
@@ -42,7 +47,24 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //バリデーション
+        $this->validate($request, [
+            //タイトルは225文字以内で必須
+            'title' => 'required|max:255',
+            //本文は必須
+            'body' => 'required'
+        ]);
+        ///Articleインスタンスを作成し、$articleに代入
+        $article = new Article();
+        //入力したタイトルをtitleプロパティにセット
+        $article->title = $request->title;
+        //本文をbodyプロパティにセット
+        $article->body = $request->body;
+        //モデルインスタンスにsave()メソッドを実行
+        $article->save();
+
+        //記事一覧にリダイレクト
+        return redirect(route('articles.index'));
     }
 
     /**

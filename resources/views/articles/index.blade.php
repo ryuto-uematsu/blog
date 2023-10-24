@@ -12,6 +12,8 @@
         <div class="site-title"><span>ミニブログ</span></div>
     </header>
     <main class="container">
+        {{--記事作成へのリンク--}}
+         <p><a href="{{ route('articles.create') }}">記事を書く</a></p>
         {{--変数は変える↓--}}
         @foreach ($articles as $article)
         <article class="article-item">
