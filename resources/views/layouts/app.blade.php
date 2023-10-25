@@ -12,6 +12,8 @@
         <a href="/" class="site-title">ミニブログ</a>
     </header>
     <main class="container">
+        {{--@yieldは別のbladeファイルの@section(セクション名)〜@endsection
+        間に記述した内容が埋め込まれる--}}
         @yield('content')
     </main>
     <footer>
